@@ -34,7 +34,7 @@ public class Register_system {
                     obj.Add_SubjectScheduler();
                       break;
                 case 4:
-                  // obj.Update(); //4 อัพเดท
+                    obj.Update(); //4 อัพเดท
                     break;
                 case 5:
                    obj.Display_Student(); 
@@ -53,7 +53,7 @@ public class Register_system {
                     break;
                 
                 case 10:
-                   // obj.exit(0);
+                    obj.exit(0);
                     break;
             }
             if(choice != 10)

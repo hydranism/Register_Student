@@ -78,4 +78,61 @@ public class operation {
        catch (IOException e) {
          }
     }
+        
+          public  void Add_SubjectScheduler(  )
+    {
+    	try{
+    		//String data = "19999 Valilake U.\n";
+
+    		File file =new File("Course_Reg.txt");
+
+    		// ถ้ายังไม่มี file ให้สร้าง file ใหม่
+    		if(!file.exists()){
+    			file.createNewFile();
+    		}
+
+    		 // เปิด file แบบ  append file เพื่อจัดเก็บข้อมูลแบบต่อท้าย
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                Scanner sc = new Scanner(System.in);
+    		FileWriter  fileWritter  =  new  FileWriter(file.getName(),true);
+    	   	BufferedWriter  bufferWritter  =  new  BufferedWriter(fileWritter);
+                 System.out.println("\n ใส่จำนวนวิชาที่ทำการลงทะเบียน : ");// แสดงจำนวนรอย
+                 N = keyboard.nextInt();
+            
+                for(int i=1; i<=N; i++)
+                    {  
+                         System.out.print(1+"> รหัสวิชา : ");
+                            //IdCourse = sc.next();
+                         IdCourse = br.readLine();
+                         System.out.print("   ชื่อวิชา : ");
+                         NameCourse = br.readLine();
+                        //NameCourse = sc.next();
+                         System.out.print("   จำนวนหน่วยกิต : ");
+                           Str = br.readLine();
+                         Credit=Integer.parseInt(Str);
+                         System.out.print("   วันที่เรียน : ");
+                        Day = br.readLine();
+                          System.out.print("   ห้องเรียน : ");
+                        Room =br.readLine();
+                          System.out.print("   เวลาเรียน : ");
+                            Time = br.readLine();
+                         bufferWritter.write(IdCourse+"  "+NameCourse+"  "+Credit+"  "+Day+"  "+Room+"  "+Time+"  \r\n");
+             }
+    	   	//bufferWritter.write(data);
+    	   	bufferWritter.close();
+
+			// เปิด file เพื่ออ่านข้อมูล
+	       	System.out.println("\n** Display datas in file");
+		    BufferedReader  in  =  new BufferedReader (new  FileReader("Course_Reg.txt"));
+         	String str;
+         	while ((str = in.readLine()) != null)
+                    { 
+                        System.out.println(str);  
+                    }
+         	in.close( );
+
+    	} catch(IOException e) {
+    		e.printStackTrace();
+    	   }
+    }
 }

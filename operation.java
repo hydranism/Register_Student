@@ -135,4 +135,120 @@ public class operation {
     		e.printStackTrace();
     	   }
     }
+          
+          public  void Add_Student(  )
+    {
+    	try{
+    		//String data = "19999 Valilake U.\n";
+
+    		File file =new File("Student.txt");
+
+    		// ถ้ายังไม่มี file ให้สร้าง file ใหม่
+    		if(!file.exists()){
+    			file.createNewFile();
+    		}
+
+    		 // เปิด file แบบ  append file เพื่อจัดเก็บข้อมูลแบบต่อท้าย
+                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	 Scanner sc = new Scanner(System.in);
+    		FileWriter  fileWritter  =  new  FileWriter(file.getName(),true);
+    	   	BufferedWriter  bufferWritter  =  new  BufferedWriter(fileWritter);
+                 System.out.println("\n ใส่จำนวนนิสิตทำการลงทะเบียน : ");// แสดงจำนวนรอย
+             N = keyboard.nextInt();
+            
+            for(int i=1; i<=N; i++)
+             {  System.out.print(1+"> รหัสนิสิต    : ");
+                //IdCourse = sc.next();
+                    ID = br.readLine();
+                System.out.print("   ชื่อ : ");
+                    Name = br.readLine();
+                //NameCourse = sc.next();
+                System.out.print("   นามสกุล : ");
+                    lastt = br.readLine();
+                //last=Integer.parseInt(lastt);
+                System.out.print("   คณะ : ");
+                    fac = br.readLine();
+                 System.out.print("   สาขา : ");
+                    major =br.readLine();
+                  System.out.print("   ชั่นปี : ");
+                    year = br.readLine();
+                     System.out.print("   ที่อยู่ : ");
+                    addresss = br.readLine();
+                     System.out.print("   เบอร์โทร : ");
+                    phone = br.readLine();
+                bufferWritter.write(ID+"  "+Name+"    "+lastt+"   "+fac+" "+major+"   "+year+"    "+addresss+"    "+phone+"  \r\n");
+             }
+    	   	//bufferWritter.write(data);
+    	   	bufferWritter.close();
+
+			// เปิด file เพื่ออ่านข้อมูล
+	       	System.out.println("\n** Display datas in file");
+		    BufferedReader  in  =  new BufferedReader (new  FileReader("Student.txt"));
+         	String str;
+         	while ((str = in.readLine()) != null)
+                    { 
+                        System.out.println(str);  
+                    }
+         	in.close( );
+
+    	} catch(IOException e) {
+    		e.printStackTrace();
+    	   }
+    }
+        public void Display_Student() { //แสดงข้อมูลที่ลงทะเบียน
+        System.out.println("\nรายวิชาที่ลงทะเบียน");
+                try {
+            BufferedReader in = new BufferedReader (new FileReader("Student.txt"));
+            String strr;
+            while ((strr = in.readLine()) != null) {
+                System.out.println(strr);
+            }
+            System.out.println(strr);
+         }
+       catch (IOException e) {
+         }
+    }
+          
+        public void Student() {  //เพิ่มรายชื่อนิสิต
+         
+     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	 Scanner sc = new Scanner(System.in);
+        try {
+            BufferedWriter out = new  BufferedWriter(new FileWriter("Student.txt"));
+              System.out.println("\n ใส่จำนวนคน : ");// แสดงจำนวนรอย
+             N = keyboard.nextInt();
+            
+            for(int i=1; i<=N; i++)
+             {  System.out.print(1+"> รหัสนิสิต    : ");
+                //IdCourse = sc.next();
+                    ID = br.readLine();
+                System.out.print("   ชื่อ : ");
+                    Name = br.readLine();
+                //NameCourse = sc.next();
+                System.out.print("   นามสกุล : ");
+                    lastt = br.readLine();
+                //last=Integer.parseInt(lastt);
+                System.out.print("   คณะ : ");
+                    fac = br.readLine();
+                 System.out.print("   สาขา : ");
+                    major =br.readLine();
+                  System.out.print("   ชั่นปี : ");
+                    year = br.readLine();
+                     System.out.print("   ที่อยู่ : ");
+                    addresss = br.readLine();
+                     System.out.print("   เบอร์โทร : ");
+                    phone = br.readLine();
+                out.write(ID+"  "+Name+"    "+lastt+"   "+fac+" "+major+"   "+year+"    "+addresss+"    "+phone+"  \r\n");
+             }
+            out.close();
+            System.out.println("\n** File created successfully\n");
+            
+         }
+        catch (IOException e) {
+      }
+    }
+    public void SearchData() {
+        System.out.println("\n*** Search Data\n");
+        // . . . 
+    }
 }

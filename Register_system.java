@@ -28,7 +28,7 @@ public class Register_system {
                     obj.SubjectScheduler();
                     break;
                 case 2: 
-                    obj.Display_SubjectScheduler();  //2 แสดงรายวิชา
+                    obj.Display_SubjectScheduler(); 
                     break;
                 case 3:
                     obj.Add_SubjectScheduler();
@@ -37,16 +37,16 @@ public class Register_system {
                   // obj.Update(); //4 อัพเดท
                     break;
                 case 5:
-                   // obj.DisplayDataStudent(); //4 แสดงรายชื่อนิสิต
+                   obj.Display_Student(); 
                     break;
                 case 6:
-                    //obj.InputStudent();
+                    obj.Student();
                     break;
                 case 7:
-                   // obj.Add_Student();
+                   obj.Add_Student();
                     break;
                 case 8:
-                   // obj.DisplayData();  //7 แสดงรายวิชา
+                   // obj.DisplayData(); 
                     break;
                 case 9:
                   //  obj.SearchData();
@@ -61,7 +61,7 @@ public class Register_system {
               System.out.print("press any key ");
               String RR = keyboard.nextLine();
             }
-        } while (choice != 5);
+        } while (choice != 10);
     }
     }
     
